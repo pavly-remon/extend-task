@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import '../variables';
 
 
 .navbar {
@@ -30,12 +30,14 @@
     display: flex;
     gap: 1rem;
 
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s;
+    }
+
     &.light {
       a {
-        text-decoration: none;
-        color: inherit;
-        transition: color 0.3s;
-
         &:hover {
           text-decoration: underline;
         }
@@ -48,10 +50,6 @@
 
     &.dark {
       a {
-        text-decoration: none;
-        color: inherit;
-        transition: color 0.3s;
-
         &:hover {
           text-decoration: underline;
         }

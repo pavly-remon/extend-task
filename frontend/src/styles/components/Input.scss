@@ -1,0 +1,31 @@
+@import "../variables";
+
+
+input {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+  &.light {
+    background-color: $light-input-bg-color;
+    color: $light-input-text-color;
+    border-color: $light-input-border-color;
+
+    &:focus {
+      border-color: $light-primary-color;
+      outline: none;
+    }
+  }
+
+  &.dark {
+    background-color: $dark-input-bg-color;
+    color: $dark-input-text-color;
+    border-color: $dark-input-border-color;
+
+    &:focus {
+      border-color: $dark-primary-color;
+      outline: none;
+    }
+  }
+}

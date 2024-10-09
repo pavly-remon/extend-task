@@ -1,15 +1,18 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./Navbar.scss";
-import SunIcon from "../icons/SunIcon.tsx";
-import MoonIcon from "../icons/MoonIcon.tsx";
-import IconButton from "../IconButton.tsx";
+import "../styles/components/Navbar.scss";
+import SunIcon from "./icons/SunIcon.tsx";
+import MoonIcon from "./icons/MoonIcon.tsx";
+import IconButton from "./IconButton.tsx";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../store/themeSlice.ts";
 
 const Navbar: FC = () => {
   const loc = useLocation();
-  const [theme, setTheme] = useState<string>("light");
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.theme.theme);
+  const changeTheme = () => {
+    dispatch(toggleTheme());
   };
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
@@ -26,7 +29,7 @@ const Navbar: FC = () => {
           <Link className={loc.pathname === "/about" ? "active" : undefined} to={"/about"}>About</Link>
         </li>
       </ul>
-      <IconButton iconElement={theme === "light" ? <MoonIcon /> : <SunIcon fill={"#e7e43c"} />} onClick={toggleTheme} />
+      <IconButton iconElement={theme === "light" ? <MoonIcon /> : <SunIcon fill={"#e7e43c"} />} onClick={changeTheme} />
     </nav>
   );
 };
