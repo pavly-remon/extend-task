@@ -1,5 +1,5 @@
 import {fireEvent, render, screen} from '@testing-library/react';
-import Input from "./Input";
+import Input from "./Input.tsx";
 
 test('Renders Input component', () => {
     render(<Input placeholder="Enter Your Name"/>);

@@ -1,27 +1,25 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import {FC} from "react";
-import Input from "./components/Input.tsx";
+import "./App.scss";
+import { FC } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home.tsx";
+import NotFound from "./pages/NotFound.tsx";
+import About from "./pages/About.tsx";
+import Navbar from "./components/Navbar/Navbar.tsx";
 
 const App: FC = () => {
 
-    return (
-        <>
-            <div>
-                <a href="https://vitejs.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo"/>
-                </a>
-                <a href="https://react.dev" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo"/>
-                </a>
-            </div>
-            <h1>Vite + React (TS)</h1>
-            <h2>Template</h2>
-            <Input defaultValue={"Init"}/>
-
-        </>
-    )
-}
+  return (
+    <Router>
+      <Navbar />
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route element={<NotFound />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
 
 export default App;

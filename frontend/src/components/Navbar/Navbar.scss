@@ -1,0 +1,73 @@
+@import '../../styles/variables';
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: transparent;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+
+  &.light {
+    color: $light-text-color;
+  }
+
+  &.dark {
+    color: $dark-text-color;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+    }
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 1rem;
+
+    &.light {
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.3s;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &.active {
+          color: $light-primary-color;
+        }
+      }
+    }
+
+    &.dark {
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.3s;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &.active {
+          color: $dark-primary-color;
+        }
+      }
+    }
+  }
+
+  li {
+    list-style: none;
+    font-size: 1rem;
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+}

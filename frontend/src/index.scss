@@ -1,0 +1,35 @@
+@import './styles/themes';
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+@mixin theme($bg-color, $text-color, $primary-color) {
+  background-color: $bg-color;
+  color: $text-color;
+
+  a, p {
+    color: $primary-color;
+  }
+}
+
+// Base styles
+body {
+  transition: background-color 0.3s, color 0.3s;
+
+  button {
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+}
+
+// Light Theme
+.light {
+  @include theme($light-bg-color, $light-text-color, $light-primary-color);
+}
+
+// Dark Theme
+.dark {
+  @include theme($dark-bg-color, $dark-text-color, $dark-primary-color);
+}
