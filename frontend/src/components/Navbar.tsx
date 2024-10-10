@@ -1,23 +1,14 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/components/Navbar.scss";
-import SunIcon from "./icons/SunIcon.tsx";
-import MoonIcon from "./icons/MoonIcon.tsx";
-import IconButton from "./IconButton.tsx";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "../store/themeSlice.ts";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store.ts";
+import ThemeSwitcher from "./ThemeSwitcher.tsx";
 
 const Navbar: FC = () => {
   const loc = useLocation();
-  const dispatch = useDispatch();
-  const theme = useSelector((state) => state.theme.theme);
-  const changeTheme = () => {
-    dispatch(toggleTheme());
-  };
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-    document.documentElement.classList.toggle("light", theme === "light");
-  }, [theme]);
+
+  const theme = useSelector((state: RootState) => state.theme.theme);
   return (
     <nav className={`navbar ${theme}`}>
       <div className="navbar-brand">Shop</div>
@@ -29,7 +20,7 @@ const Navbar: FC = () => {
           <Link className={loc.pathname === "/about" ? "active" : undefined} to={"/about"}>About</Link>
         </li>
       </ul>
-      <IconButton iconElement={theme === "light" ? <MoonIcon /> : <SunIcon fill={"#e7e43c"} />} onClick={changeTheme} />
+      <ThemeSwitcher/>
     </nav>
   );
 };

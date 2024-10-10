@@ -1,0 +1,33 @@
+.product-details {
+  @apply w-full flex flex-col items-center p-12 mobile:p-4 gap-4;
+  & .title {
+    @apply w-full font-bold text-3xl;
+  }
+
+  & .product-img {
+    @apply w-[100%] laptop:w-[50%] flex justify-center bg-gray-200 p-10 rounded-xl;
+    & .no-img {
+      @apply w-[30%];
+    }
+  }
+
+  & .description {
+    @apply w-full text-md;
+  }
+
+  & .add-cart {
+    @apply w-[60%] py-4 text-center rounded-xl text-xl;
+  }
+
+  &.dark {
+    .add-cart {
+      @apply bg-dark-primary-color;
+    }
+  }
+
+  &.light {
+    .add-cart {
+      @apply bg-light-primary-color text-white;
+    }
+  }
+}

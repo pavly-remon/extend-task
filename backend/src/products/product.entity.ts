@@ -1,8 +1,8 @@
 import {
-  Entity,
   Column,
-  PrimaryGeneratedColumn,
   CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 
 @Entity()
@@ -18,6 +18,12 @@ export class Product {
 
   @CreateDateColumn()
   creationDate: Date;
+
+  @Column()
+  category: string;
+
+  @Column({ nullable: true })
+  imgUrl: string;
 
   @Column({ nullable: true })
   description: string;

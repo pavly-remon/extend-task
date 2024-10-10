@@ -1,0 +1,15 @@
+.search-bar {
+  @apply w-full flex justify-center;
+  & div {
+    @apply w-[70%] flex justify-center relative;
+  }
+
+  & .input {
+    @apply w-full p-4 text-xl rounded-2xl border-2;
+  }
+
+  & .search-icon {
+    @apply absolute w-fit right-[2%] top-1/4;
+    @apply mobile:right-[5%];
+  }
+}

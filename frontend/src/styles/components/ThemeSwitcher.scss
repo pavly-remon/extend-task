@@ -1,0 +1,14 @@
+
+.theme-switcher {
+  @apply flex justify-center items-center gap-1;
+  & p {
+    &.dark {
+      @apply text-dark-text-color;
+    }
+
+    &.light {
+      @apply text-light-text-color;
+
+    }
+  }
+}

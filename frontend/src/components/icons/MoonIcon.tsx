@@ -1,20 +1,20 @@
 import { FC } from "react";
 
 interface Props {
-  fill?: string;
+  fill: string;
   width?: number;
   height?: number;
 }
 
-const SunIcon: FC<Props> = ({ fill, width = 32, height = 32 }) => {
+const SunIcon: FC<Props> = ({ fill, width = 24, height = 24 }) => {
   return (
     <div>
-      <svg width={width} height={height} id="Layer_1" version="1.1" viewBox="0 0 512 512"
-           xmlns="http://www.w3.org/2000/svg">
+      <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
-          d="M248.082,263.932c-31.52-31.542-39.979-77.104-26.02-116.542c-15.25,5.395-29.668,13.833-41.854,26.02  c-43.751,43.75-43.751,114.667,0,158.395c43.729,43.73,114.625,43.752,158.374,0c12.229-12.186,20.646-26.604,26.021-41.854  C325.188,303.91,279.604,295.451,248.082,263.932z"
+          d="M7.15406 5.94234C7.15406 4.39547 7.38141 2.83219 7.96172 1.5C4.10344 3.17953 1.5 7.11984 1.5 11.5959C1.5 17.618 6.38203 22.5 12.4041 22.5C16.8802 22.5 20.8205 19.8966 22.5 16.0383C21.1678 16.6186 19.6031 16.8459 18.0577 16.8459C12.0356 16.8459 7.15406 11.9644 7.15406 5.94234Z"
           fill={fill} />
       </svg>
+
     </div>
   );
 };

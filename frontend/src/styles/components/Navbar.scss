@@ -1,71 +1,46 @@
-@import '../variables';
-
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: transparent;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
+  @apply flex justify-between items-center p-4 bg-transparent shadow-lg mb-4;
 
   &.light {
-    color: $light-text-color;
+    @apply text-light-text-color;
   }
 
   &.dark {
-    color: $dark-text-color;
+    @apply text-dark-text-color;
   }
 
   .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    @media (max-width: 768px) {
-      font-size: 1.25rem;
-    }
+    @apply text-5xl mobile:text-4xl font-black;
   }
 
   .navbar-links {
-    display: flex;
-    gap: 1rem;
+    @apply flex justify-center gap-4 flex-1;
 
     a {
-      text-decoration: none;
-      color: inherit;
-      transition: color 0.3s;
+      @apply no-underline text-[inherit] transition-colors duration-300;
+
+      &:hover {
+        @apply underline;
+      }
     }
 
     &.light {
-      a {
-        &:hover {
-          text-decoration: underline;
-        }
-
-        &.active {
-          color: $light-primary-color;
-        }
+      a.active {
+        @apply text-light-primary-color;
       }
+
     }
 
     &.dark {
-      a {
-        &:hover {
-          text-decoration: underline;
-        }
-
-        &.active {
-          color: $dark-primary-color;
-        }
+      a.active {
+        @apply text-dark-primary-color;
       }
+
     }
   }
 
   li {
-    list-style: none;
-    font-size: 1rem;
-    @media (max-width: 768px) {
-      font-size: 1rem;
-    }
+    @apply list-none text-md;
   }
 }

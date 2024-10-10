@@ -10,9 +10,20 @@ export class ProductsService {
     private productsRepository: Repository<Product>,
   ) {}
 
-  findAll(): Promise<Product[]> {
-    return this.productsRepository.find();
+  findAll(filter?: string, sortBy?: string, sortOrder: 'ASC' | 'DESC' = 'ASC'): Promise<Product[]> {
+    const queryBuilder = this.productsRepository.createQueryBuilder('product');
+
+    if (filter) {
+      queryBuilder.where('product.name ILIKE :filter', { filter: `%${filter}%` });
+    }
+
+    if (sortBy) {
+      queryBuilder.orderBy(`product.${sortBy}`, sortOrder);
+    }
+
+    return queryBuilder.getMany();
   }
+
 
   findOne(id: string): Promise<Product> {
     return this.productsRepository.findOneBy({ id: parseInt(id) });

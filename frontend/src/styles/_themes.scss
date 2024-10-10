@@ -1,18 +1,13 @@
-@import './variables';
-
-@mixin theme($bg-color, $text-color, $primary-color) {
-  background-color: $bg-color;
-  color: $text-color;
-
+.light {
+  @apply bg-light-bg-color text-light-text-color;
   a {
-    color: $primary-color;
+    @apply text-light-primary-color;
   }
 }
 
-.light {
-  @include theme($light-bg-color, $light-text-color, $light-primary-color);
-}
-
 .dark {
-  @include theme($dark-bg-color, $dark-text-color, $dark-primary-color);
+  @apply bg-dark-bg-color text-dark-text-color;
+  a {
+    @apply text-dark-primary-color;
+  }
 }

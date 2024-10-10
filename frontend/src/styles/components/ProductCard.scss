@@ -1,0 +1,30 @@
+.product-card {
+  @apply flex flex-col justify-between gap-1 w-72 mobile:w-56 h-full p-6 shadow-md hover:shadow-xl rounded-xl transition-colors duration-300;
+  & .product-img {
+    @apply w-[100%] flex justify-center bg-gray-200 p-10 rounded-xl;
+    & .no-img {
+      @apply w-[30%];
+    }
+  }
+
+  &.dark {
+    @apply hover:bg-dark-primary-color;
+    & .description {
+      @apply text-s text-dark-description-color;
+    }
+  }
+
+  &.light {
+    & .description {
+      @apply text-s text-light-description-color;
+    }
+  }
+
+  & .title {
+    @apply text-lg font-bold;
+  }
+
+  & .description {
+    @apply text-s text-dark-description-color;
+  }
+}
