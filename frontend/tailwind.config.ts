@@ -41,6 +41,7 @@ const config: Config = {
           "bg-color": "#1e1e1e",
           "text-color": "#ffffff",
           "primary-color": "#e74c3c",
+          "primary-color-40": "rgba(231,76,60,0.4)",
           "input-bg-color": "#333333",
           "input-border-color": "#555555",
           "description-color": "#cccccc",

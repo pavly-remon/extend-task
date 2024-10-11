@@ -1,0 +1,47 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Move the item slightly down */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Return to original position */
+  }
+}
+
+.product-tile {
+  @apply flex justify-between items-center gap-6 w-full h-full laptop:h-32 p-6 shadow-md hover:shadow-xl rounded-xl transition-colors duration-300;
+  animation: fadeIn 0.5s forwards;
+
+  & .product-img {
+    @apply flex justify-center bg-gray-200 p-10 rounded-xl;
+    & .no-img {
+      @apply w-10;
+    }
+  }
+
+  & .product-content {
+    @apply w-full flex-shrink;
+  }
+
+  &.dark {
+    @apply hover:bg-dark-primary-color-40;
+    & .description {
+      @apply text-s text-dark-description-color;
+    }
+  }
+
+  &.light {
+    & .description {
+      @apply text-s text-light-description-color;
+    }
+  }
+
+  & .title {
+    @apply text-lg font-bold;
+  }
+
+  & .description {
+    @apply text-s text-dark-description-color;
+  }
+}

@@ -1,7 +1,7 @@
 .search-bar {
-  @apply w-full flex justify-center;
-  & div {
-    @apply w-[70%] flex justify-center relative;
+  @apply w-full flex justify-center gap-4;
+  & .name-filter {
+    @apply w-[50%] flex justify-center relative;
   }
 
   & .input {
@@ -11,5 +11,8 @@
   & .search-icon {
     @apply absolute w-fit right-[2%] top-1/4;
     @apply mobile:right-[5%];
+  }
+  & .category-filter{
+    @apply w-[30%];
   }
 }

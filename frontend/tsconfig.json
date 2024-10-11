@@ -9,17 +9,17 @@
     }
   ],
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "es2015",
+    "noEmitOnError": true,
     "strict": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "target": "es6",
+    "target": "ES2022",
     "typeRoots": [
       "./node_modules/@types"
     ],
     "types": [
-      "@testing-library/jest-dom",
       "jest"
     ],
     "useDefineForClassFields": true,
@@ -29,7 +29,7 @@
       "DOM.Iterable"
     ],
     //absolute import
-    "baseUrl": "./src",
+    "baseUrl": "src",
     "paths": {
       "@/*": [
         "./*"
@@ -47,9 +47,11 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "src/**/*",
-    "src/types.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "**/*.test.ts"
   ]
 }

@@ -1,0 +1,44 @@
+.drop-down {
+  @apply rounded-xl border-2;
+  .label {
+    @apply w-full flex justify-between;
+  }
+
+  .options {
+    @apply absolute border-2 w-full rounded-xl z-50 overflow-clip;
+  }
+
+  &.dark {
+    @apply bg-dark-input-bg-color border-dark-input-border-color;
+
+    .label {
+      @apply text-dark-input-text-color;
+    }
+
+    .options {
+      @apply bg-dark-bg-color;
+
+    }
+
+    .options li {
+      @apply hover:bg-dark-primary-color hover:text-dark-bg-color p-2;
+    }
+  }
+
+  &.light {
+    @apply bg-light-input-bg-color border-light-input-border-color;
+
+    .label {
+      @apply text-light-input-text-color;
+    }
+
+    .options {
+      @apply bg-light-bg-color;
+
+    }
+
+    .options li {
+      @apply hover:bg-light-primary-color hover:text-light-bg-color p-2;
+    }
+  }
+}

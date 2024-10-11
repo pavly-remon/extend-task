@@ -10,11 +10,21 @@ export class ProductsService {
     private productsRepository: Repository<Product>,
   ) {}
 
-  findAll(filter?: string, sortBy?: string, sortOrder: 'ASC' | 'DESC' = 'ASC'): Promise<Product[]> {
+  findAll(
+    filter?: string,
+    category?: string,
+    sortBy?: string,
+    sortOrder: 'ASC' | 'DESC' = 'ASC',
+  ): Promise<Product[]> {
     const queryBuilder = this.productsRepository.createQueryBuilder('product');
 
     if (filter) {
-      queryBuilder.where('product.name ILIKE :filter', { filter: `%${filter}%` });
+      queryBuilder.where('product.name ILIKE :filter', {
+        filter: `%${filter}%`,
+      });
+    }
+    if (category) {
+      queryBuilder.andWhere('product.category = :category', { category });
     }
 
     if (sortBy) {
@@ -23,7 +33,6 @@ export class ProductsService {
 
     return queryBuilder.getMany();
   }
-
 
   findOne(id: string): Promise<Product> {
     return this.productsRepository.findOneBy({ id: parseInt(id) });
@@ -41,5 +50,13 @@ export class ProductsService {
 
   async remove(id: string): Promise<void> {
     await this.productsRepository.delete(id);
+  }
+
+  async findAllCategories(): Promise<string[]> {
+    const categories = await this.productsRepository
+      .createQueryBuilder('product')
+      .select('DISTINCT product.category')
+      .getRawMany();
+    return categories.map((cat) => cat.category);
   }
 }

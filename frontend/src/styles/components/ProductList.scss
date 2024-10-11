@@ -1,3 +1,7 @@
+.product-grid {
+  @apply grid grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 gap-4 laptop:gap-8 w-full p-4;
+}
+
 .product-list {
-  @apply flex justify-center gap-4 mobile:gap-6 flex-wrap w-full p-4;
+  @apply grid grid-cols-1 gap-4  w-full p-4;
 }

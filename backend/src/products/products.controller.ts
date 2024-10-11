@@ -1,11 +1,12 @@
 import {
+  Body,
   Controller,
+  Delete,
   Get,
+  Param,
   Post,
   Put,
-  Delete,
-  Param,
-  Body,
+  Query,
 } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { Product } from './product.entity';
@@ -15,11 +16,21 @@ export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
   @Get()
-  findAll(): Promise<Product[]> {
-    return this.productsService.findAll();
+  async getAllProducts(
+    @Query('filter') filter?: string,
+    @Query('category') category?: string,
+    @Query('sortBy') sortBy?: string,
+    @Query('sortOrder') sortOrder: 'ASC' | 'DESC' = 'ASC',
+  ): Promise<Product[]> {
+    return this.productsService.findAll(filter, category, sortBy, sortOrder);
   }
 
-  @Get(':id')
+  @Get('categories')
+  async getCategories(): Promise<string[]> {
+    return this.productsService.findAllCategories();
+  }
+
+  @Get('info/:id')
   findOne(@Param('id') id: string): Promise<Product> {
     return this.productsService.findOne(id);
   }

@@ -10,7 +10,6 @@ import { setTheme } from "./store/themeSlice.ts";
 const App: FC = () => {
   const dispatch = useDispatch();
   const theme = window.localStorage.getItem("shop-theme");
-  console.log("Theme => ", theme);
   dispatch(setTheme(theme ?? "light"));
   return (
     <Router>

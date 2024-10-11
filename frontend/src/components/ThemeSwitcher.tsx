@@ -21,7 +21,7 @@ const ThemeSwitcher: FC = () => {
   return (
     <div className="theme-switcher">
       <p className={theme}>Theme:</p>
-      <IconButton iconElement={theme !== "light" ? <MoonIcon fill="#ffffff" /> : <SunIcon fill={"#e7b13c"} />} onClick={changeTheme} />
+      <IconButton iconElement={theme !== "light" ? <MoonIcon className="text-white w-6"/> : <SunIcon className="w-6 text-orange-400" />} onClick={changeTheme} />
     </div>
   );
 };
