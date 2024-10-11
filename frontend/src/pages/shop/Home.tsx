@@ -1,7 +1,7 @@
 import { ChangeEvent, FC, useState } from "react";
-import Search from "../components/Search";
-import "../styles/pages/Home.scss";
-import ProductList from "../components/ProductList.tsx";
+import Search from "../../components/Search.tsx";
+import "../../styles/pages/Home.scss";
+import ProductList from "../../components/ProductList.tsx";
 
 const Home: FC = () => {
   const [inputSearch, setInputSearch] = useState<string>("");

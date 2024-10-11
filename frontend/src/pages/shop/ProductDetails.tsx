@@ -1,14 +1,14 @@
 import { FC } from "react";
-import "../styles/pages/Home.scss";
-import useFetch from "../hooks/useFetch.ts";
-import { Product } from "../store/shopSlice.ts";
+import "../../styles/pages/Home.scss";
+import useFetch from "../../hooks/useFetch.ts";
+import { Product } from "../../store/shopSlice.ts";
 import { Link, useParams } from "react-router-dom";
-import "../styles/pages/ProductDetails.scss";
-import NoImage from "../components/icons/NoImage.tsx";
+import "../../styles/pages/ProductDetails.scss";
+import NoImage from "../../components/icons/NoImage.tsx";
 import { useSelector } from "react-redux";
-import { RootState } from "../store/store.ts";
-import Error from "../components/Error.tsx";
-import LoadingGIF from "../components/Loading.tsx";
+import { RootState } from "../../store/store.ts";
+import Error from "../../components/Error.tsx";
+import LoadingGIF from "../../components/Loading.tsx";
 
 const ProductDetails: FC = () => {
   const params = useParams();

@@ -17,7 +17,7 @@ const Navbar: FC = () => {
           <Link className={loc.pathname === "/" ? "active" : undefined} to={"/"}>Home</Link>
         </li>
         <li>
-          <Link className={loc.pathname === "/about" ? "active" : undefined} to={"/about"}>About</Link>
+          <Link className={loc.pathname === "/admin" ? "active" : undefined} to={"/admin"}>Admin</Link>
         </li>
       </ul>
       <ThemeSwitcher/>
