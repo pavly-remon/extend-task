@@ -8,6 +8,13 @@ const AddProduct: FC = () => {
     const [description, setDescription] = useState("");
     const [category, setCategory] = useState("");
     const [imageUrl, setImageUrl] = useState("");
+    const clearInputs = () => {
+        setName("");
+        setPrice(0);
+        setDescription("");
+        setCategory("");
+        setImageUrl("");
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,7 +29,8 @@ const AddProduct: FC = () => {
         });
 
         const data = await response.json();
-        console.log("Product created:", data);
+        clearInputs();
+
     };
 
     return (
