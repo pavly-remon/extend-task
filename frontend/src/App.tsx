@@ -7,6 +7,8 @@ import {useDispatch} from "react-redux";
 import {setTheme} from "./store/themeSlice.ts";
 import AdminLayout from "./pages/admin/AdminLayout.tsx";
 import RootLayout from "./pages/shop/RootLayout.tsx";
+import AddProduct from "@/pages/admin/AddProduct.tsx";
+import EditProduct from "@/pages/admin/EditProduct.tsx";
 
 const App: FC = () => {
     const dispatch = useDispatch();
@@ -22,7 +24,8 @@ const App: FC = () => {
                         <Route path="/products/:id" element={<ProductDetails/>}/>
                     </Route>
                     <Route path="/admin" element={<AdminLayout/>}>
-                        <Route path="products/:id" element={<ProductDetails/>}/>
+                        <Route path="/admin" element={<AddProduct/>}/>
+                        <Route path="/admin/edit" element={<EditProduct/>}/>
                     </Route>
                     <Route element={<NotFound/>}/>
                 </Routes>

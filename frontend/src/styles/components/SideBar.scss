@@ -1,0 +1,27 @@
+.sideBarItem {
+    @apply w-full font-adelle-sans font-normal text-s text-unselSideBarItem py-1 px-6 cursor-pointer;
+}
+
+.sideBarItem:hover {
+    @apply text-cWhite
+}
+
+.sideBarGroup {
+    @apply w-full font-adelle-sans;
+}
+
+.sideBarGroup span {
+    @apply w-full font-adelle-sans font-normal text-unselSideBarItem py-2 px-8 cursor-pointer;
+}
+
+.sideBarGroup ul {
+    @apply pl-10;
+}
+
+.active {
+    @apply border-l-4 border-cWhite text-cWhite;
+}
+
+.activeNoBorder {
+    @apply !text-cWhite;
+}

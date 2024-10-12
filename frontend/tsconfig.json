@@ -31,9 +31,7 @@
     //absolute import
     "baseUrl": "src",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",
